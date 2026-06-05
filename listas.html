@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      background-color: #1a1a1a;
+      /* Fondo negro para que el menú combine con el título y el pie de página */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto del menú */
+      padding: 20px 10px;
+      /* Espacio interior: 20px arriba y abajo, 10px a los lados */
+    }
+
+    h2 {
+      color: #FFD700;
+      /* Color dorado para el título DESTINOS */
+      font-size: 13px;
+      /* Tamaño pequeño para que no compita con los botones */
+      text-transform: uppercase;
+      /* Pone el texto en mayúsculas automáticamente */
+      letter-spacing: 2px;
+      /* Separa las letras para que se vea como un título elegante */
+      margin-bottom: 16px;
+      /* Espacio debajo del título antes de que empiecen los botones */
+      text-align: center;
+      /* Centra el título horizontalmente */
+    }
+
+    ul {
+      list-style: none;
+      /* Quita los puntos o números que los navegadores ponen por defecto en las listas */
+      padding: 0;
+      /* Quita el espacio interior por defecto de la lista */
+      margin: 0;
+      /* Quita el espacio exterior por defecto de la lista */
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      /* Espacio entre cada botón del menú para que no queden pegados */
+    }
+
+    ul li a {
+      display: block;
+      /* Hace que el link ocupe todo el ancho disponible, no solo el texto */
+      color: white;
+      /* Color blanco para el texto de cada botón */
+      text-decoration: none;
+      /* Quita el subrayado que los navegadores ponen por defecto en los links */
+      padding: 10px 14px;
+      /* Espacio interior del botón: 10px arriba y abajo, 14px a los lados */
+      border-radius: 6px;
+      /* Redondea las esquinas de cada botón */
+      font-size: 13px;
+      /* Tamaño de letra de los botones */
+      border: 1px solid #333;
+      /* Borde gris oscuro alrededor de cada botón */
+    }
+
+    ul li a:hover {
+      background-color: #FFD700;
+      /* Cuando el mouse pasa por encima el fondo se vuelve dorado */
+      color: #1a1a1a;
+      /* Cuando el mouse pasa por encima el texto se vuelve negro */
+      font-weight: bold;
+      /* Cuando el mouse pasa por encima el texto se pone en negrilla */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible del menú -->
+
+  <!-- Título del menú lateral -->
+  <h2>Destinos</h2>
+
+  <!-- Lista de botones del menú -->
+  <ul>
+
+    <!-- Botón de inicio con color dorado para que se destaque de los demás -->
+    <!-- href indica a qué archivo va al hacer clic -->
+    <!-- target="contenido" hace que el archivo se abra en el marco central, no en el menú -->
+    <!-- style aquí cambia el color del borde y el texto solo de este botón -->
+    <li><a href="contenido.html" target="contenido" style="color: #FFD700; border-color: #FFD700;">Inicio</a></li>
+
+    <!-- Botón para ir a Cartagena de Indias -->
+    <!-- Al hacer clic carga el archivo Cartagena_de_indias.html en el marco del centro -->
+    <li><a href="Cartagena_de_indias.html" target="contenido">Cartagena de Indias</a></li>
+
+    <!-- Botón para ir al Valle del Cocora -->
+    <!-- Al hacer clic carga el archivo Valle_del_cocora.html en el marco del centro -->
+    <li><a href="Valle_del_cocora.html" target="contenido">Valle del Cocora</a></li>
+
+    <!-- Botón para ir al Parque Tayrona -->
+    <!-- Al hacer clic carga el archivo Parque_tayrona.html en el marco del centro -->
+    <li><a href="Parque_tayrona.html" target="contenido">Parque Tayrona</a></li>
+
+    <!-- Botón para ir a la Catedral de Sal -->
+    <!-- Al hacer clic carga el archivo Catedral_de_sal.html en el marco del centro -->
+    <li><a href="Catedral_de_sal.html" target="contenido">Catedral de Sal</a></li>
+
+    <!-- Botón para ir a Caño Cristales -->
+    <!-- Al hacer clic carga el archivo Cano_cristales.html en el marco del centro -->
+    <li><a href="Cano_cristales.html" target="contenido">Caño Cristales</a></li>
+
+    <!-- Botón para ir a la Plaza Botero -->
+    <!-- Al hacer clic carga el archivo Plaza_botero.html en el marco del centro -->
+    <li><a href="Plaza_botero.html" target="contenido">Plaza Botero</a></li>
+
+  </ul>
+  <!-- Cierra la lista de botones -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

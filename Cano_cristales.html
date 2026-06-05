@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que no sea tan blanco puro */
+      padding: 30px 40px;
+      /* Espacio interior: 30px arriba y abajo, 40px a los lados */
+    }
+
+    .encabezado {
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo del encabezado */
+      padding-left: 16px;
+      /* Separa el texto de la línea dorada para que no queden pegados */
+      margin-bottom: 20px;
+      /* Espacio debajo del encabezado antes de la imagen */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color del título principal, negro casi puro */
+      font-size: 22px;
+      /* Tamaño del título principal */
+      margin: 0 0 4px 0;
+      /* Solo 4px de espacio debajo del título */
+    }
+
+    h3 {
+      color: #1a1a1a;
+      /* Color de los subtítulos de sección */
+      font-size: 16px;
+      /* Tamaño más pequeño que el título principal */
+      border-left: 3px solid #FFD700;
+      /* Línea dorada más delgada al lado izquierdo del subtítulo */
+      padding-left: 10px;
+      /* Espacio entre la línea dorada y el texto del subtítulo */
+      margin-top: 24px;
+      /* Espacio encima del subtítulo para separarlo del contenido anterior */
+      margin-bottom: 10px;
+      /* Espacio debajo del subtítulo antes del contenido */
+    }
+
+    .ubicacion {
+      color: #888;
+      /* Gris para que la ubicación se vea secundaria respecto al título */
+      font-size: 13px;
+      /* Letra más pequeña que el título */
+    }
+
+    img {
+      width: 100%;
+      /* La imagen ocupa todo el ancho disponible */
+      height: 350px;
+      /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+      object-fit: cover;
+      /* Recorta la imagen para que llene el espacio sin deformarse */
+      object-position: center;
+      /* El recorte se hace desde el centro de la imagen */
+      margin-bottom: 20px;
+      /* Espacio entre la imagen y el texto que viene después */
+      border-radius: 6px;
+      /* Redondea levemente las esquinas de la imagen */
+    }
+
+    p {
+      color: #444;
+      /* Gris oscuro para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    .datos {
+      display: grid;
+      /* Activa el modo cuadrícula para organizar las tarjetas */
+      grid-template-columns: 1fr 1fr;
+      /* Divide el espacio en dos columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio entre cada tarjeta */
+      margin-top: 20px;
+      /* Espacio entre el texto y las tarjetas */
+      margin-bottom: 30px;
+      /* Espacio debajo de las tarjetas antes del siguiente contenido */
+    }
+
+    .dato {
+      background-color: white;
+      /* Fondo blanco para cada tarjeta */
+      border: 1px solid #ddd;
+      /* Borde gris claro alrededor de la tarjeta */
+      border-left: 4px solid #FFD700;
+      /* Borde izquierdo dorado más grueso como acento */
+      padding: 10px 14px;
+      /* Espacio interior de la tarjeta */
+    }
+
+    .dato .label {
+      font-size: 11px;
+      /* Letra pequeña para la etiqueta */
+      color: #888;
+      /* Color gris para que sea secundario */
+      text-transform: uppercase;
+      /* Pone la etiqueta en mayúsculas automáticamente */
+      letter-spacing: 0.5px;
+      /* Separa un poco las letras para que se lea mejor */
+    }
+
+    .dato .valor {
+      font-size: 14px;
+      /* Tamaño del valor */
+      font-weight: bold;
+      /* Valor en negrilla para que resalte */
+      color: #1a1a1a;
+      /* Color casi negro para el valor */
+      margin-top: 3px;
+      /* Pequeño espacio entre la etiqueta y el valor */
+    }
+
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 36%;
+      /* Reduce la altura del video, antes era 56.25% que es el tamaño completo 16:9 */
+      max-width: 640px;
+      /* Limita el ancho máximo del video para que no ocupe toda la pantalla */
+      margin: 10px auto 30px auto;
+      /* auto en los lados lo centra horizontalmente */
+      height: 0;
+      /* Altura en 0 porque el tamaño lo controla el padding */
+      overflow: hidden;
+      /* Oculta lo que se salga del contenedor */
+      border-radius: 6px;
+      /* Redondea las esquinas del video */
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      /* Posiciona el video dentro del contenedor */
+      top: 0;
+      /* Lo pega arriba del contenedor */
+      left: 0;
+      /* Lo pega a la izquierda del contenedor */
+      width: 100%;
+      /* El video ocupa todo el ancho del contenedor */
+      height: 100%;
+      /* El video ocupa toda la altura del contenedor */
+      border: 0;
+      /* Quita el borde que los navegadores agregan al iframe por defecto */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Bloque del encabezado con el nombre del sitio y su ubicación -->
+  <div class="encabezado">
+    <h2>Caño Cristales</h2>
+    <!-- Nombre principal del sitio turístico -->
+    <div class="ubicacion">La Macarena, Meta, Colombia</div>
+    <!-- Ubicación del sitio, se ve en gris debajo del nombre -->
+  </div>
+
+  <!-- Imagen representativa del sitio -->
+  <!-- src indica dónde está guardada la imagen dentro del proyecto -->
+  <!-- alt es el texto que aparece si la imagen no carga -->
+  <img src="imagenes/cano.jpg" alt="Caño Cristales">
+
+  <!-- Subtítulo de la sección de descripción general -->
+  <h3>Descripcion general</h3>
+
+  <!-- Párrafos con la descripción general del sitio -->
+  <p>Caño Cristales es un rio ubicado en la Sierra de La Macarena, en el departamento del Meta, Colombia. Es conocido mundialmente como el rio de los cinco colores o el rio mas hermoso del mundo, debido al espectacular fenomeno natural que ocurre en sus aguas entre los meses de julio y noviembre.</p>
+
+  <p>Durante esa temporada, una planta acuatica endemica llamada Macarenia clavigera tine el fondo del rio de un intenso color rojo y rosado, que se combina con el amarillo de la arena, el verde de las algas, el azul del agua y el negro de las rocas, creando una paleta de colores unica en el planeta.</p>
+
+  <!-- Subtítulo de la sección del fenómeno natural -->
+  <h3>El fenomeno de los cinco colores</h3>
+
+  <!-- Párrafos explicando el fenómeno natural -->
+  <p>El secreto detras de los colores de Caño Cristales es la Macarenia clavigera, una planta acuatica que solo crece en este rio y en muy pocos lugares del mundo. Esta planta necesita condiciones muy especificas de luz, temperatura y nivel del agua para florecer y producir su caracteristico color rojo intenso.</p>
+
+  <p>El fenomeno ocurre unicamente entre julio y noviembre porque en esa epoca el nivel del agua es el adecuado para que la planta reciba suficiente luz solar. En temporada de lluvias el rio sube demasiado y la planta no puede fotosintentizar. En verano el rio baja tanto que la planta se seca. Solo en esa ventana de tiempo se puede ver el espectaculo de colores.</p>
+
+  <!-- Subtítulo de la sección de biodiversidad -->
+  <h3>Biodiversidad y ecosistema</h3>
+
+  <!-- Párrafos sobre la biodiversidad del lugar -->
+  <p>La Sierra de La Macarena donde se encuentra Caño Cristales es una de las zonas con mayor biodiversidad del mundo. Es un punto de encuentro entre cuatro grandes ecosistemas colombianos: la Amazonia, la Orinoquia, los Andes y el Choco Biogeografico. Esta confluencia crea una diversidad biologica extraordinaria.</p>
+
+  <p>En sus alrededores habitan mas de 400 especies de aves, 10 especies de primates, anacondas, dantas, jaguares y cientos de especies de peces e insectos. La vegetacion incluye desde selvas tropicales hasta sabanas y tepuyes, que son mesetas de roca antigua con vegetacion unica.</p>
+
+  <!-- Subtítulo de la sección de cómo llegar -->
+  <h3>Como llegar</h3>
+
+  <!-- Párrafos con información de acceso -->
+  <p>Caño Cristales solo es accesible en avioneta desde Villavicencio o Bogota hasta el pueblo de La Macarena. No hay carretera que llegue hasta alli. El vuelo desde Villavicencio dura aproximadamente 45 minutos y desde Bogota cerca de una hora y media.</p>
+
+  <p>Desde La Macarena se hace un recorrido en lancha por el rio Duda y luego una caminata hasta el caño. El recorrido completo puede durar entre 2 y 4 horas dependiendo del punto del rio que se visite. Es obligatorio ir con un guia certificado y el ingreso esta regulado por Parques Nacionales de Colombia.</p>
+
+  <!-- Subtítulo de la sección de recomendaciones -->
+  <h3>Recomendaciones para visitar</h3>
+
+  <!-- Párrafos con consejos para los visitantes -->
+  <p>Esta prohibido usar bloqueador solar, repelente quimico o cualquier producto que pueda contaminar el agua del rio. Solo se permiten productos biodegradables. Tampoco se puede ingresar con comida al area del caño, ni tocar o pisar las plantas del fondo del rio para no dañarlas.</p>
+
+  <p>Se recomienda reservar con bastante anticipacion ya que el cupo diario de visitantes es muy limitado para proteger el ecosistema. Los tours generalmente incluyen alojamiento en La Macarena, alimentacion, guia y transporte local. La mejor epoca para visitar es entre agosto y octubre cuando los colores estan en su punto maximo.</p>
+
+  <!-- Subtítulo de la sección de datos importantes -->
+  <h3>Datos importantes</h3>
+
+  <!-- Cuadrícula con tarjetas de datos concretos del sitio -->
+  <div class="datos">
+
+    <!-- Tarjeta 1: colores que se pueden ver en el río -->
+    <div class="dato">
+      <div class="label">Colores</div>
+      <!-- Etiqueta que indica qué tipo de dato es -->
+      <div class="valor">Rojo, azul, verde, amarillo, negro</div>
+      <!-- El dato en sí, se ve en negrilla -->
+    </div>
+
+    <!-- Tarjeta 2: departamento donde está ubicado -->
+    <div class="dato">
+      <div class="label">Departamento</div>
+      <div class="valor">Meta</div>
+    </div>
+
+    <!-- Tarjeta 3: temporada ideal para visitar -->
+    <div class="dato">
+      <div class="label">Temporada</div>
+      <div class="valor">Julio a Noviembre</div>
+    </div>
+
+    <!-- Tarjeta 4: nombre de la planta que produce los colores -->
+    <div class="dato">
+      <div class="label">Planta endemica</div>
+      <div class="valor">Macarenia clavigera</div>
+    </div>
+
+    <!-- Tarjeta 5: forma de llegar al lugar -->
+    <div class="dato">
+      <div class="label">Acceso</div>
+      <div class="valor">Solo en avioneta</div>
+    </div>
+
+    <!-- Tarjeta 6: ecosistemas que se encuentran en el lugar -->
+    <div class="dato">
+      <div class="label">Ecosistemas</div>
+      <div class="valor">Amazonia, Orinoquia, Andes, Choco</div>
+    </div>
+
+  </div>
+  <!-- Cierra la sección de tarjetas de datos -->
+
+  <!-- Subtítulo de la sección del video -->
+  <h3>Video</h3>
+
+  <!-- Contenedor del video de YouTube -->
+  <!-- El padding-bottom mantiene la proporción 16:9 del video -->
+  <div class="video-contenedor">
+
+    <!-- iframe permite mostrar contenido externo como videos de YouTube dentro de la página -->
+    <!-- src es el enlace del video en formato de inserción -->
+    <!-- allowfullscreen permite ver el video en pantalla completa -->
+    <iframe
+      src="https://www.youtube.com/embed/g3pWZBp0-HQ?si=Q0RVdSplFZV_4QvK"
+      title="Video de Caño Cristales"
+      allowfullscreen>
+    </iframe>
+    <!-- Cierra el iframe del video -->
+
+  </div>
+  <!-- Cierra el contenedor del video -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

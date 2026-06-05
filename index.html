@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este es un documento HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento. lang="es" indica que el idioma es español -->
+
+<head>
+  <!-- Configuración de la página, el usuario no la ve -->
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes y caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página se vea bien en distintos tamaños de pantalla -->
+  <title>Sitios Turisticos de Colombia</title>
+  <!-- Texto que aparece en la pestaña del navegador -->
+</head>
+
+<!-- frameset divide la pantalla en secciones, reemplaza al body -->
+<!-- cols="220px, 80%" = columna izquierda de 220px, el resto a la derecha -->
+<!-- border="2" = grosor del borde entre marcos -->
+<frameset cols="220px, 80%" border="2">
+
+  <!-- Marco del menu izquierdo -->
+  <!-- name="menu" = nombre del marco para identificarlo -->
+  <!-- src="listas.html" = archivo que carga dentro del marco -->
+  <!-- scrolling="no" = quita la barra de desplazamiento -->
+  <frame name="menu" src="listas.html" scrolling="no">
+
+  <!-- Frameset interior que divide la columna derecha en 3 filas -->
+  <!-- rows="12%, *, 10%" = titulo arriba, contenido en medio, pie abajo -->
+  <frameset rows="12%, *, 10%" border="1">
+
+    <!-- Marco del titulo superior -->
+    <frame name="titulo" src="titulo.html" scrolling="no">
+
+    <!-- Marco del contenido principal -->
+    <!-- Este es el marco que cambia al hacer clic en el menu -->
+    <frame name="contenido" src="contenido.html" scrolling="yes">
+
+    <!-- Marco del pie de pagina -->
+    <frame name="hecho" src="hecho.html" scrolling="no">
+
+  </frameset>
+  <!-- Cierra el frameset interior -->
+
+</frameset>
+<!-- Cierra el frameset principal -->
+
+</html>
+<!-- Cierra el documento -->

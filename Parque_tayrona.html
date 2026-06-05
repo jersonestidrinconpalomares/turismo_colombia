@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que no sea tan blanco puro */
+      padding: 30px 40px;
+      /* Espacio interior: 30px arriba y abajo, 40px a los lados */
+    }
+
+    .encabezado {
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo del encabezado */
+      padding-left: 16px;
+      /* Separa el texto de la línea dorada para que no queden pegados */
+      margin-bottom: 20px;
+      /* Espacio debajo del encabezado antes de la imagen */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color del título principal, negro casi puro */
+      font-size: 22px;
+      /* Tamaño del título principal */
+      margin: 0 0 4px 0;
+      /* Solo 4px de espacio debajo del título */
+    }
+
+    h3 {
+      color: #1a1a1a;
+      /* Color de los subtítulos de sección */
+      font-size: 16px;
+      /* Tamaño más pequeño que el título principal */
+      border-left: 3px solid #FFD700;
+      /* Línea dorada más delgada al lado izquierdo del subtítulo */
+      padding-left: 10px;
+      /* Espacio entre la línea y el texto del subtítulo */
+      margin-top: 24px;
+      /* Espacio encima del subtítulo para separarlo del contenido anterior */
+      margin-bottom: 10px;
+      /* Espacio debajo del subtítulo antes del contenido */
+    }
+
+    .ubicacion {
+      color: #888;
+      /* Gris para que la ubicación se vea secundaria respecto al título */
+      font-size: 13px;
+      /* Letra más pequeña que el título */
+    }
+
+    img {
+      width: 100%;
+      /* La imagen ocupa todo el ancho disponible */
+      height: 350px;
+      /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+      object-fit: cover;
+      /* Recorta la imagen para que llene el espacio sin deformarse */
+      object-position: center;
+      /* El recorte se hace desde el centro de la imagen */
+      margin-bottom: 20px;
+      /* Espacio entre la imagen y el texto que viene después */
+      border-radius: 6px;
+      /* Redondea levemente las esquinas de la imagen */
+    }
+
+    p {
+      color: #444;
+      /* Gris oscuro para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    .datos {
+      display: grid;
+      /* Activa el modo cuadrícula para organizar las tarjetas */
+      grid-template-columns: 1fr 1fr;
+      /* Divide el espacio en dos columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio entre cada tarjeta */
+      margin-top: 20px;
+      /* Espacio entre el texto y las tarjetas */
+      margin-bottom: 30px;
+      /* Espacio debajo de las tarjetas antes del siguiente contenido */
+    }
+
+    .dato {
+      background-color: white;
+      /* Fondo blanco para cada tarjeta */
+      border: 1px solid #ddd;
+      /* Borde gris claro alrededor de la tarjeta */
+      border-left: 4px solid #FFD700;
+      /* Borde izquierdo dorado más grueso como acento */
+      padding: 10px 14px;
+      /* Espacio interior de la tarjeta */
+    }
+
+    .dato .label {
+      font-size: 11px;
+      /* Letra pequeña para la etiqueta */
+      color: #888;
+      /* Color gris para que sea secundario */
+      text-transform: uppercase;
+      /* Pone la etiqueta en mayúsculas automáticamente */
+      letter-spacing: 0.5px;
+      /* Separa un poco las letras para que se lea mejor */
+    }
+
+    .dato .valor {
+      font-size: 14px;
+      /* Tamaño del valor */
+      font-weight: bold;
+      /* Valor en negrilla para que resalte */
+      color: #1a1a1a;
+      /* Color casi negro para el valor */
+      margin-top: 3px;
+      /* Pequeño espacio entre la etiqueta y el valor */
+    }
+
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 36%;
+      /* Reduce la altura del video, antes era 56.25% que es el tamaño completo 16:9 */
+      max-width: 640px;
+      /* Limita el ancho máximo del video para que no ocupe toda la pantalla */
+      margin: 10px auto 30px auto;
+      /* auto en los lados lo centra horizontalmente */
+      height: 0;
+      /* Altura en 0 porque el tamaño lo controla el padding */
+      overflow: hidden;
+      /* Oculta lo que se salga del contenedor */
+      border-radius: 6px;
+      /* Redondea las esquinas del video */
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      /* Posiciona el video dentro del contenedor */
+      top: 0;
+      /* Lo pega arriba del contenedor */
+      left: 0;
+      /* Lo pega a la izquierda del contenedor */
+      width: 100%;
+      /* El video ocupa todo el ancho del contenedor */
+      height: 100%;
+      /* El video ocupa toda la altura del contenedor */
+      border: 0;
+      /* Quita el borde que los navegadores agregan al iframe por defecto */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Bloque del encabezado con el nombre del sitio y su ubicación -->
+  <div class="encabezado">
+    <h2>Parque Nacional Tayrona</h2>
+    <!-- Nombre principal del sitio turístico -->
+    <div class="ubicacion">Santa Marta, Magdalena, Colombia</div>
+    <!-- Ubicación del sitio, se ve en gris debajo del nombre -->
+  </div>
+
+  <!-- Imagen representativa del sitio -->
+  <!-- src indica dónde está guardada la imagen dentro del proyecto -->
+  <!-- alt es el texto que aparece si la imagen no carga -->
+  <img src="imagenes/tayrona.jpg" alt="Parque Nacional Tayrona">
+
+  <!-- Subtítulo de la sección de descripción general -->
+  <h3>Descripcion general</h3>
+
+  <!-- Párrafos con la descripción general del sitio -->
+  <p>El Parque Nacional Natural Tayrona es una de las areas protegidas mas visitadas e importantes de Colombia. Está ubicado en el departamento del Magdalena, a solo 34 kilometros de la ciudad de Santa Marta, en la Costa Caribe colombiana.</p>
+
+  <p>Es un lugar unico en el mundo donde la selva tropical se encuentra directamente con el mar Caribe, creando paisajes de una belleza excepcional. Sus playas de arena blanca rodeadas de vegetacion exuberante y aguas turquesas lo han convertido en uno de los destinos turisticos mas reconocidos de America Latina.</p>
+
+  <!-- Subtítulo de la sección histórica -->
+  <h3>Historia y cultura</h3>
+
+  <!-- Párrafos con la historia del parque -->
+  <p>El nombre del parque proviene de la civilizacion Tayrona, uno de los pueblos indigenas mas avanzados que habitaron esta region antes de la llegada de los españoles. Los Tayronas construyeron ciudades de piedra en medio de la selva, de las cuales la mas famosa es Ciudad Perdida, tambien conocida como Teyuna, ubicada dentro del mismo parque.</p>
+
+  <p>El Parque Nacional Tayrona fue creado oficialmente en 1969. Hoy en dia varias comunidades indigenas como los Koguis, Arhuacos y Wiwas siguen habitando sus territorios dentro y alrededor del parque, manteniendo vivas sus tradiciones ancestrales.</p>
+
+  <!-- Subtítulo de la sección de playas -->
+  <h3>Playas principales</h3>
+
+  <!-- Párrafos con información de las playas -->
+  <p>El parque cuenta con mas de 30 playas, cada una con caracteristicas diferentes. Cabo San Juan es considerada la playa mas hermosa del parque, con sus aguas cristalinas y una vista unica desde los miradores naturales. Arrecifes es la playa mas conocida pero no apta para nadar por sus corrientes peligrosas.</p>
+
+  <p>La Piscina y Castilletes son ideales para el baño tranquilo. Cañaveral es la playa de entrada principal al parque y cuenta con cabañas para hospedarse. Todas las playas estan rodeadas de vegetacion tropical que llega hasta la orilla del mar.</p>
+
+  <!-- Subtítulo de la sección de biodiversidad -->
+  <h3>Biodiversidad</h3>
+
+  <!-- Párrafos con información de flora y fauna -->
+  <p>El Parque Tayrona alberga una biodiversidad extraordinaria. En su territorio conviven mas de 300 especies de aves, 100 especies de mamiferos como monos, tigrillos y dantas, y mas de 200 especies de peces en sus arrecifes de coral. Tambien es habitat de tortugas marinas que llegan a desovar en sus playas.</p>
+
+  <p>En cuanto a flora, el parque cuenta con selvas tropicales, manglares, matorrales secos y ecosistemas marinos. Esta diversidad de habitats lo convierte en uno de los ecosistemas mas ricos y complejos de Colombia.</p>
+
+  <!-- Subtítulo de la sección de recomendaciones -->
+  <h3>Recomendaciones para visitar</h3>
+
+  <!-- Párrafos con consejos para los visitantes -->
+  <p>Para ingresar al parque es obligatorio hacer una reserva previa en linea a traves de la pagina del Ministerio de Ambiente. El ingreso tiene un costo y el cupo diario es limitado para proteger el ecosistema. Se recomienda reservar con varios dias de anticipacion, especialmente en temporada alta.</p>
+
+  <p>Dentro del parque no se permite hacer fogatas, tirar basura, recoger plantas o animales, ni ingresar con alcohol. Se recomienda llevar repelente de insectos, bloqueador solar biodegradable, agua suficiente y calzado comodo para caminar por los senderos.</p>
+
+  <!-- Subtítulo de la sección de datos importantes -->
+  <h3>Datos importantes</h3>
+
+  <!-- Cuadrícula con tarjetas de datos concretos del sitio -->
+  <div class="datos">
+
+    <!-- Tarjeta 1: área total del parque -->
+    <div class="dato">
+      <div class="label">Area total</div>
+      <!-- Etiqueta que indica qué tipo de dato es -->
+      <div class="valor">15.000 hectareas</div>
+      <!-- El dato en sí, se ve en negrilla -->
+    </div>
+
+    <!-- Tarjeta 2: departamento donde está ubicado -->
+    <div class="dato">
+      <div class="label">Departamento</div>
+      <div class="valor">Magdalena</div>
+    </div>
+
+    <!-- Tarjeta 3: cantidad de playas -->
+    <div class="dato">
+      <div class="label">Playas</div>
+      <div class="valor">Mas de 30</div>
+    </div>
+
+    <!-- Tarjeta 4: año de creación del parque -->
+    <div class="dato">
+      <div class="label">Creado en</div>
+      <div class="valor">1969</div>
+    </div>
+
+    <!-- Tarjeta 5: especies de aves registradas -->
+    <div class="dato">
+      <div class="label">Especies de aves</div>
+      <div class="valor">Mas de 300</div>
+    </div>
+
+    <!-- Tarjeta 6: distancia desde Santa Marta -->
+    <div class="dato">
+      <div class="label">Distancia Santa Marta</div>
+      <div class="valor">34 kilometros</div>
+    </div>
+
+  </div>
+  <!-- Cierra la sección de tarjetas de datos -->
+
+  <!-- Subtítulo de la sección del video -->
+  <h3>Video</h3>
+
+  <!-- Contenedor del video de YouTube -->
+  <!-- El padding-bottom mantiene la proporción 16:9 del video -->
+  <div class="video-contenedor">
+
+    <!-- iframe permite mostrar contenido externo como videos de YouTube dentro de la página -->
+    <!-- src es el enlace del video en formato de inserción -->
+    <!-- allowfullscreen permite ver el video en pantalla completa -->
+    <iframe
+      src="https://www.youtube.com/embed/RfH6-ss8aVU?si=2Cin05NVcWwnkKh2"
+      title="Video del Parque Nacional Tayrona"
+      allowfullscreen>
+    </iframe>
+    <!-- Cierra el iframe del video -->
+
+  </div>
+  <!-- Cierra el contenedor del video -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

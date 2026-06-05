@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que no sea tan blanco puro */
+      padding: 30px 40px;
+      /* Espacio interior: 30px arriba y abajo, 40px a los lados */
+    }
+
+    .encabezado {
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo del encabezado */
+      padding-left: 16px;
+      /* Separa el texto de la línea dorada para que no queden pegados */
+      margin-bottom: 20px;
+      /* Espacio debajo del encabezado antes de la imagen */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color del título principal, negro casi puro */
+      font-size: 22px;
+      /* Tamaño del título principal */
+      margin: 0 0 4px 0;
+      /* Solo 4px de espacio debajo del título */
+    }
+
+    h3 {
+      color: #1a1a1a;
+      /* Color de los subtítulos de sección */
+      font-size: 16px;
+      /* Tamaño más pequeño que el título principal */
+      border-left: 3px solid #FFD700;
+      /* Línea dorada más delgada al lado izquierdo del subtítulo */
+      padding-left: 10px;
+      /* Espacio entre la línea dorada y el texto del subtítulo */
+      margin-top: 24px;
+      /* Espacio encima del subtítulo para separarlo del contenido anterior */
+      margin-bottom: 10px;
+      /* Espacio debajo del subtítulo antes del contenido */
+    }
+
+    .ubicacion {
+      color: #888;
+      /* Gris para que la ubicación se vea secundaria respecto al título */
+      font-size: 13px;
+      /* Letra más pequeña que el título */
+    }
+
+    img {
+      width: 100%;
+      /* La imagen ocupa todo el ancho disponible */
+      height: 350px;
+      /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+      object-fit: cover;
+      /* Recorta la imagen para que llene el espacio sin deformarse */
+      object-position: center;
+      /* El recorte se hace desde el centro de la imagen */
+      margin-bottom: 20px;
+      /* Espacio entre la imagen y el texto que viene después */
+      border-radius: 6px;
+      /* Redondea levemente las esquinas de la imagen */
+    }
+
+    p {
+      color: #444;
+      /* Gris oscuro para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    .datos {
+      display: grid;
+      /* Activa el modo cuadrícula para organizar las tarjetas */
+      grid-template-columns: 1fr 1fr;
+      /* Divide el espacio en dos columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio entre cada tarjeta */
+      margin-top: 20px;
+      /* Espacio entre el texto y las tarjetas */
+      margin-bottom: 30px;
+      /* Espacio debajo de las tarjetas antes del siguiente contenido */
+    }
+
+    .dato {
+      background-color: white;
+      /* Fondo blanco para cada tarjeta */
+      border: 1px solid #ddd;
+      /* Borde gris claro alrededor de la tarjeta */
+      border-left: 4px solid #FFD700;
+      /* Borde izquierdo dorado más grueso como acento */
+      padding: 10px 14px;
+      /* Espacio interior de la tarjeta */
+    }
+
+    .dato .label {
+      font-size: 11px;
+      /* Letra pequeña para la etiqueta */
+      color: #888;
+      /* Color gris para que sea secundario */
+      text-transform: uppercase;
+      /* Pone la etiqueta en mayúsculas automáticamente */
+      letter-spacing: 0.5px;
+      /* Separa un poco las letras para que se lea mejor */
+    }
+
+    .dato .valor {
+      font-size: 14px;
+      /* Tamaño del valor */
+      font-weight: bold;
+      /* Valor en negrilla para que resalte */
+      color: #1a1a1a;
+      /* Color casi negro para el valor */
+      margin-top: 3px;
+      /* Pequeño espacio entre la etiqueta y el valor */
+    }
+
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 36%;
+      /* Reduce la altura del video, antes era 56.25% que es el tamaño completo 16:9 */
+      max-width: 640px;
+      /* Limita el ancho máximo del video para que no ocupe toda la pantalla */
+      margin: 10px auto 30px auto;
+      /* auto en los lados lo centra horizontalmente */
+      height: 0;
+      /* Altura en 0 porque el tamaño lo controla el padding */
+      overflow: hidden;
+      /* Oculta lo que se salga del contenedor */
+      border-radius: 6px;
+      /* Redondea las esquinas del video */
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      /* Posiciona el video dentro del contenedor */
+      top: 0;
+      /* Lo pega arriba del contenedor */
+      left: 0;
+      /* Lo pega a la izquierda del contenedor */
+      width: 100%;
+      /* El video ocupa todo el ancho del contenedor */
+      height: 100%;
+      /* El video ocupa toda la altura del contenedor */
+      border: 0;
+      /* Quita el borde que los navegadores agregan al iframe por defecto */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Bloque del encabezado con el nombre del sitio y su ubicación -->
+  <div class="encabezado">
+    <h2>Plaza Botero - Medellin</h2>
+    <!-- Nombre principal del sitio turístico -->
+    <div class="ubicacion">Medellin, Antioquia, Colombia</div>
+    <!-- Ubicación del sitio, se ve en gris debajo del nombre -->
+  </div>
+
+  <!-- Imagen representativa del sitio -->
+  <!-- src indica dónde está guardada la imagen dentro del proyecto -->
+  <!-- alt es el texto que aparece si la imagen no carga -->
+  <img src="imagenes/botero.jpg" alt="Plaza Botero Medellin">
+
+  <!-- Subtítulo de la sección de descripción general -->
+  <h3>Descripcion general</h3>
+
+  <!-- Párrafos con la descripción general del sitio -->
+  <p>La Plaza Botero es un espacio publico ubicado en el centro historico de Medellin, frente al Museo de Antioquia. En ella se exhiben permanentemente 23 esculturas de bronce donadas por el artista colombiano Fernando Botero a su ciudad natal en el año 2000. Es uno de los lugares mas visitados y fotografiados de Colombia.</p>
+
+  <p>Las esculturas se caracterizan por las formas exageradamente voluminosas y redondeadas que son el sello distintivo del estilo de Botero, conocido mundialmente como el boterismo. La plaza es de acceso completamente gratuito las 24 horas del dia y recibe miles de visitantes cada semana.</p>
+
+  <!-- Subtítulo de la sección sobre Fernando Botero -->
+  <h3>Fernando Botero</h3>
+
+  <!-- Párrafos con información sobre el artista -->
+  <p>Fernando Botero nacio en Medellin el 19 de abril de 1932 y es considerado el artista latinoamericano vivo mas reconocido y cotizado del mundo. Desde muy joven mostro talento para el dibujo y la pintura. Estudio en la Escuela de Bellas Artes de Medellin y luego viajo a Europa para perfeccionar su arte en Madrid, Florencia y Paris.</p>
+
+  <p>Su estilo unico, caracterizado por figuras humanas y animales de proporciones exageradas y redondeadas, lo hizo famoso en todo el mundo. Ademas de escultor, Botero es reconocido como pintor y sus obras se encuentran en los museos y colecciones privadas mas importantes del planeta. Fallecio el 15 de septiembre de 2023 en Monaco a los 91 años, dejando un legado artistico inmenso para Colombia y el mundo.</p>
+
+  <!-- Subtítulo de la sección de las esculturas -->
+  <h3>Las esculturas</h3>
+
+  <!-- Párrafos con descripción de las esculturas -->
+  <p>Las 23 esculturas de la plaza fueron donadas por Botero en el año 2000 como un regalo a su ciudad natal. Entre las mas famosas estan La Mona Lisa a los doce años, El Hombre a Caballo, La Gorda, El Gato, El Perro y La Mujer con Fruta. Cada escultura pesa entre una y varias toneladas y fue fundida en bronce en talleres especializados de Europa.</p>
+
+  <p>Ademas de las esculturas de la plaza exterior, el Museo de Antioquia que esta justo al lado alberga la coleccion permanente mas grande de obras de Botero en el mundo, con mas de 100 pinturas y esculturas donadas tambien por el artista. Visitar la plaza y el museo juntos es la experiencia completa del arte boteriano.</p>
+
+  <!-- Subtítulo de la sección del entorno -->
+  <h3>El entorno y que hacer cerca</h3>
+
+  <!-- Párrafos sobre el entorno de la plaza -->
+  <p>La Plaza Botero esta ubicada en el corazon del centro de Medellin, rodeada de edificios historicos, el Palacio de la Cultura Rafael Uribe Uribe y el Museo de Antioquia. El sector es conocido como el centro cultural de la ciudad y es muy transitado por locales y turistas durante todo el dia.</p>
+
+  <p>Cerca de la plaza se puede tomar el metro de Medellin, visitar el Parque de las Luces, recorrer la Avenida El Palo con sus tiendas de libros usados y explorar el mercado popular de San Alejo que se instala los primeros sabados de cada mes. El barrio El Centro es tambien famoso por su gastronomia popular y sus restaurantes de comida antiqueña.</p>
+
+  <!-- Subtítulo de la sección de recomendaciones -->
+  <h3>Recomendaciones para visitar</h3>
+
+  <!-- Párrafos con consejos para los visitantes -->
+  <p>La plaza es de acceso libre y gratuito en todo momento. Se recomienda visitarla en horas de la mañana entre semana para evitar las multitudes del fin de semana. Es un lugar muy seguro y bien iluminado, con presencia constante de policia turistica y vendedores de artesanias locales.</p>
+
+  <p>Se recomienda combinar la visita con el Museo de Antioquia que tiene un valor de entrada muy accesible y permite ver de cerca la coleccion completa de obras de Botero. Desde la plaza tambien se puede tomar el metro cable hacia los barrios de las comunas para conocer la transformacion urbana de Medellin.</p>
+
+  <!-- Subtítulo de la sección de datos importantes -->
+  <h3>Datos importantes</h3>
+
+  <!-- Cuadrícula con tarjetas de datos concretos del sitio -->
+  <div class="datos">
+
+    <!-- Tarjeta 1: número de esculturas en la plaza -->
+    <div class="dato">
+      <div class="label">Esculturas</div>
+      <!-- Etiqueta que indica qué tipo de dato es -->
+      <div class="valor">23 en bronce</div>
+      <!-- El dato en sí, se ve en negrilla -->
+    </div>
+
+    <!-- Tarjeta 2: departamento donde está ubicada -->
+    <div class="dato">
+      <div class="label">Departamento</div>
+      <div class="valor">Antioquia</div>
+    </div>
+
+    <!-- Tarjeta 3: nombre del artista que donó las esculturas -->
+    <div class="dato">
+      <div class="label">Artista</div>
+      <div class="valor">Fernando Botero</div>
+    </div>
+
+    <!-- Tarjeta 4: costo de la entrada a la plaza -->
+    <div class="dato">
+      <div class="label">Entrada plaza</div>
+      <div class="valor">Completamente gratis</div>
+    </div>
+
+    <!-- Tarjeta 5: año en que fueron donadas las esculturas -->
+    <div class="dato">
+      <div class="label">Año de donacion</div>
+      <div class="valor">2000</div>
+    </div>
+
+    <!-- Tarjeta 6: museo que está junto a la plaza -->
+    <div class="dato">
+      <div class="label">Museo adjunto</div>
+      <div class="valor">Museo de Antioquia</div>
+    </div>
+
+  </div>
+  <!-- Cierra la sección de tarjetas de datos -->
+
+  <!-- Subtítulo de la sección del video -->
+  <h3>Video</h3>
+
+  <!-- Contenedor del video de YouTube -->
+  <!-- El padding-bottom mantiene la proporción 16:9 del video -->
+  <div class="video-contenedor">
+
+    <!-- iframe permite mostrar contenido externo como videos de YouTube dentro de la página -->
+    <!-- src es el enlace del video en formato de inserción -->
+    <!-- allowfullscreen permite ver el video en pantalla completa -->
+    <iframe
+      src="https://www.youtube.com/embed/wUurZ2jyWKc?si=qlwh4CWIgHNYkLlR"
+      title="Video de la Plaza Botero Medellin"
+      allowfullscreen>
+    </iframe>
+    <!-- Cierra el iframe del video -->
+
+  </div>
+  <!-- Cierra el contenedor del video -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

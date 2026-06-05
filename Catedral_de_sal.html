@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que no sea tan blanco puro */
+      padding: 30px 40px;
+      /* Espacio interior: 30px arriba y abajo, 40px a los lados */
+    }
+
+    .encabezado {
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo del encabezado */
+      padding-left: 16px;
+      /* Separa el texto de la línea dorada para que no queden pegados */
+      margin-bottom: 20px;
+      /* Espacio debajo del encabezado antes de la imagen */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color del título principal, negro casi puro */
+      font-size: 22px;
+      /* Tamaño del título principal */
+      margin: 0 0 4px 0;
+      /* Solo 4px de espacio debajo del título */
+    }
+
+    h3 {
+      color: #1a1a1a;
+      /* Color de los subtítulos de sección */
+      font-size: 16px;
+      /* Tamaño más pequeño que el título principal */
+      border-left: 3px solid #FFD700;
+      /* Línea dorada más delgada al lado izquierdo del subtítulo */
+      padding-left: 10px;
+      /* Espacio entre la línea y el texto del subtítulo */
+      margin-top: 24px;
+      /* Espacio encima del subtítulo para separarlo del contenido anterior */
+      margin-bottom: 10px;
+      /* Espacio debajo del subtítulo antes del contenido */
+    }
+
+    .ubicacion {
+      color: #888;
+      /* Gris para que la ubicación se vea secundaria respecto al título */
+      font-size: 13px;
+      /* Letra más pequeña que el título */
+    }
+
+    img {
+      width: 100%;
+      /* La imagen ocupa todo el ancho disponible */
+      height: 350px;
+      /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+      object-fit: cover;
+      /* Recorta la imagen para que llene el espacio sin deformarse */
+      object-position: center;
+      /* El recorte se hace desde el centro de la imagen */
+      margin-bottom: 20px;
+      /* Espacio entre la imagen y el texto que viene después */
+      border-radius: 6px;
+      /* Redondea levemente las esquinas de la imagen */
+    }
+
+    p {
+      color: #444;
+      /* Gris oscuro para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    .datos {
+      display: grid;
+      /* Activa el modo cuadrícula para organizar las tarjetas */
+      grid-template-columns: 1fr 1fr;
+      /* Divide el espacio en dos columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio entre cada tarjeta */
+      margin-top: 20px;
+      /* Espacio entre el texto y las tarjetas */
+      margin-bottom: 30px;
+      /* Espacio debajo de las tarjetas antes del siguiente contenido */
+    }
+
+    .dato {
+      background-color: white;
+      /* Fondo blanco para cada tarjeta */
+      border: 1px solid #ddd;
+      /* Borde gris claro alrededor de la tarjeta */
+      border-left: 4px solid #FFD700;
+      /* Borde izquierdo dorado más grueso como acento */
+      padding: 10px 14px;
+      /* Espacio interior de la tarjeta */
+    }
+
+    .dato .label {
+      font-size: 11px;
+      /* Letra pequeña para la etiqueta */
+      color: #888;
+      /* Color gris para que sea secundario */
+      text-transform: uppercase;
+      /* Pone la etiqueta en mayúsculas automáticamente */
+      letter-spacing: 0.5px;
+      /* Separa un poco las letras para que se lea mejor */
+    }
+
+    .dato .valor {
+      font-size: 14px;
+      /* Tamaño del valor */
+      font-weight: bold;
+      /* Valor en negrilla para que resalte */
+      color: #1a1a1a;
+      /* Color casi negro para el valor */
+      margin-top: 3px;
+      /* Pequeño espacio entre la etiqueta y el valor */
+    }
+
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 36%;
+      /* Reduce la altura del video, antes era 56.25% que es el tamaño completo 16:9 */
+      max-width: 640px;
+      /* Limita el ancho máximo del video para que no ocupe toda la pantalla */
+      margin: 10px auto 30px auto;
+      /* auto en los lados lo centra horizontalmente */
+      height: 0;
+      /* Altura en 0 porque el tamaño lo controla el padding */
+      overflow: hidden;
+      /* Oculta lo que se salga del contenedor */
+      border-radius: 6px;
+      /* Redondea las esquinas del video */
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      /* Posiciona el video dentro del contenedor */
+      top: 0;
+      /* Lo pega arriba del contenedor */
+      left: 0;
+      /* Lo pega a la izquierda del contenedor */
+      width: 100%;
+      /* El video ocupa todo el ancho del contenedor */
+      height: 100%;
+      /* El video ocupa toda la altura del contenedor */
+      border: 0;
+      /* Quita el borde que los navegadores agregan al iframe por defecto */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Bloque del encabezado con el nombre del sitio y su ubicación -->
+  <div class="encabezado">
+    <h2>Catedral de Sal de Zipaquira</h2>
+    <!-- Nombre principal del sitio turístico -->
+    <div class="ubicacion">Zipaquira, Cundinamarca, Colombia</div>
+    <!-- Ubicación del sitio, se ve en gris debajo del nombre -->
+  </div>
+
+  <!-- Imagen representativa del sitio -->
+  <!-- src indica dónde está guardada la imagen dentro del proyecto -->
+  <!-- alt es el texto que aparece si la imagen no carga -->
+  <img src="imagenes/catedral.jpg" alt="Catedral de Sal de Zipaquira">
+
+  <!-- Subtítulo de la sección de descripción general -->
+  <h3>Descripcion general</h3>
+
+  <!-- Párrafos con la descripción general del sitio -->
+  <p>La Catedral de Sal de Zipaquira es una iglesia subterranea construida dentro de las tuneles de una mina de sal gema, ubicada a 180 metros bajo la superficie de la tierra, en el municipio de Zipaquira, departamento de Cundinamarca, a solo 49 kilometros de Bogota.</p>
+
+  <p>En 2007 fue elegida como la primera maravilla de Colombia en una votacion popular. Es considerada una obra maestra de la ingenieria y la arquitectura colombiana, y uno de los monumentos religiosos mas impresionantes de America Latina. Recibe aproximadamente 600.000 visitantes al ano.</p>
+
+  <!-- Subtítulo de la sección histórica -->
+  <h3>Historia</h3>
+
+  <!-- Párrafos con la historia de la catedral -->
+  <p>La explotacion de sal en Zipaquira tiene mas de 500 anos de historia. Desde la epoca precolombina, los indigenas Muiscas ya extraian y comerciaban la sal de estas minas. Durante la colonia española, la sal de Zipaquira fue uno de los productos mas importantes para la economia de la Nueva Granada.</p>
+
+  <p>Los mineros que trabajaban en las minas construyeron una primera capilla en 1932 como lugar de oracion antes de entrar a trabajar. Esta capilla fue cerrada en 1990 por problemas de seguridad estructural. La catedral actual fue construida en un sector diferente de la mina y fue inaugurada el 16 de diciembre de 1995.</p>
+
+  <!-- Subtítulo de la sección de arquitectura -->
+  <h3>Arquitectura e interior</h3>
+
+  <!-- Párrafos con descripción de la arquitectura -->
+  <p>La catedral esta dividida en tres naves que representan el nacimiento, la vida y la muerte de Jesus. La nave principal tiene una altura de 23 metros y puede albergar hasta 8.000 personas. El elemento mas imponente es la cruz central de 16 metros de altura tallada directamente en la roca de sal.</p>
+
+  <p>El interior esta iluminado con luces de colores que resaltan las diferentes texturas y tonos de la sal. Hay 14 capillas que representan las estaciones del Via Crucis, cada una esculpida en la roca. La temperatura dentro de la catedral es de aproximadamente 18 grados centigrados durante todo el ano.</p>
+
+  <!-- Subtítulo de la sección de la mina -->
+  <h3>La mina de sal</h3>
+
+  <!-- Párrafos con información sobre la mina -->
+  <p>La mina de sal de Zipaquira es una de las mas grandes del mundo. Se estima que contiene aproximadamente 110 millones de toneladas de sal. La mina tiene una extension de mas de 2 kilometros cuadrados y sus tuneles alcanzan profundidades de hasta 200 metros.</p>
+
+  <p>Ademas de la catedral, dentro del complejo subterraneo hay un museo de mineria, una galeria de arte y un espacio de exposiciones. El recorrido completo por la catedral y el museo dura aproximadamente dos horas.</p>
+
+  <!-- Subtítulo de la sección de información para visitar -->
+  <h3>Informacion para visitar</h3>
+
+  <!-- Párrafos con consejos prácticos -->
+  <p>La Catedral de Sal queda a 49 kilometros de Bogota y se puede llegar en bus desde el Terminal de Transportes del Norte en aproximadamente una hora. Tambien hay tours organizados desde Bogota que incluyen transporte, entrada y guia.</p>
+
+  <p>Se recomienda llevar ropa abrigada ya que la temperatura dentro de la mina es fresca durante todo el ano. El recorrido incluye caminar por los tuneles, por lo que se aconseja usar zapatos comodos. Las visitas se realizan con guias oficiales y el ingreso solo es posible con reserva previa.</p>
+
+  <!-- Subtítulo de la sección de datos importantes -->
+  <h3>Datos importantes</h3>
+
+  <!-- Cuadrícula con tarjetas de datos concretos del sitio -->
+  <div class="datos">
+
+    <!-- Tarjeta 1: profundidad bajo tierra -->
+    <div class="dato">
+      <div class="label">Profundidad</div>
+      <!-- Etiqueta que indica qué tipo de dato es -->
+      <div class="valor">180 metros bajo tierra</div>
+      <!-- El dato en sí, se ve en negrilla -->
+    </div>
+
+    <!-- Tarjeta 2: departamento donde está ubicada -->
+    <div class="dato">
+      <div class="label">Departamento</div>
+      <div class="valor">Cundinamarca</div>
+    </div>
+
+    <!-- Tarjeta 3: capacidad máxima de personas -->
+    <div class="dato">
+      <div class="label">Capacidad</div>
+      <div class="valor">8.000 personas</div>
+    </div>
+
+    <!-- Tarjeta 4: altura de la cruz principal -->
+    <div class="dato">
+      <div class="label">Cruz principal</div>
+      <div class="valor">16 metros de alto</div>
+    </div>
+
+    <!-- Tarjeta 5: año de inauguración de la catedral actual -->
+    <div class="dato">
+      <div class="label">Inaugurada</div>
+      <div class="valor">16 de diciembre de 1995</div>
+    </div>
+
+    <!-- Tarjeta 6: distancia desde Bogotá -->
+    <div class="dato">
+      <div class="label">Distancia Bogota</div>
+      <div class="valor">49 kilometros</div>
+    </div>
+
+  </div>
+  <!-- Cierra la sección de tarjetas de datos -->
+
+  <!-- Subtítulo de la sección del video -->
+  <h3>Video</h3>
+
+  <!-- Contenedor del video de YouTube -->
+  <!-- El padding-bottom mantiene la proporción 16:9 del video -->
+  <div class="video-contenedor">
+
+    <!-- iframe permite mostrar contenido externo como videos de YouTube dentro de la página -->
+    <!-- src es el enlace del video en formato de inserción -->
+    <!-- allowfullscreen permite ver el video en pantalla completa -->
+    <iframe
+      src="https://www.youtube.com/embed/kxMmNB6B1ZQ?si=jfoz4G6vYoeUmcKW"
+      title="Video de la Catedral de Sal de Zipaquira"
+      allowfullscreen>
+    </iframe>
+    <!-- Cierra el iframe del video -->
+
+  </div>
+  <!-- Cierra el contenedor del video -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

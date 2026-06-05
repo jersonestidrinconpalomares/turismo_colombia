@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que la tarjeta blanca resalte sobre él */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      display: flex;
+      /* Activa flexbox para poder centrar la tarjeta fácilmente */
+      align-items: center;
+      /* Centra la tarjeta verticalmente en la pantalla */
+      justify-content: center;
+      /* Centra la tarjeta horizontalmente en la pantalla */
+      height: 100vh;
+      /* Hace que el body ocupe toda la altura del marco */
+    }
+
+    .caja {
+      background-color: white;
+      /* Fondo blanco para la tarjeta de bienvenida */
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo de la tarjeta */
+      padding: 40px 50px;
+      /* Espacio interior de la tarjeta: 40px arriba y abajo, 50px a los lados */
+      max-width: 600px;
+      /* Ancho máximo de la tarjeta para que no se estire demasiado en pantallas grandes */
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+      /* Sombra suave alrededor de la tarjeta para darle profundidad */
+      /* Los números significan: 2px a la derecha, 2px abajo, 10px de difuminado, color negro al 8% de opacidad */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color negro casi puro para el título de la tarjeta */
+      font-size: 24px;
+      /* Tamaño del título */
+      margin-bottom: 16px;
+      /* Espacio debajo del título antes del primer párrafo */
+    }
+
+    p {
+      color: #555;
+      /* Gris medio para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que el texto sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    span {
+      color: #1a1a1a;
+      /* Color negro para que el texto destacado resalte sobre el gris del párrafo */
+      font-weight: bold;
+      /* Pone el texto en negrilla para que llame la atención */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Tarjeta blanca con el mensaje de bienvenida que aparece al entrar a la página -->
+  <div class="caja">
+  <!-- div es un contenedor, caja es el nombre del estilo que se le aplica -->
+
+    <h2>Turismo en Colombia</h2>
+    <!-- Título principal de la tarjeta de bienvenida -->
+
+    <!-- Primer párrafo con una descripción general de Colombia -->
+    <p>
+      Colombia es uno de los paises con mayor diversidad natural y cultural del mundo.
+      Desde sus costas en el Caribe hasta sus valles y montanas, cada rincon del pais
+      guarda una historia y un paisaje unico.
+    </p>
+
+    <!-- Segundo párrafo que explica qué va a encontrar el usuario en la página -->
+    <!-- La etiqueta span resalta en negrilla las palabras "6 sitios turisticos" -->
+    <p>
+      En esta pagina encontraras <span>6 sitios turisticos</span> representativos del pais,
+      con informacion sobre su ubicacion, historia y datos de interes.
+    </p>
+
+    <!-- Tercer párrafo con la instrucción de cómo usar el menú -->
+    <p>
+      Selecciona cualquier destino del menu de la izquierda para comenzar.
+    </p>
+
+  </div>
+  <!-- Cierra la tarjeta de bienvenida -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Abre el documento HTML. lang="es" indica que el contenido está en español -->
+
+<head>
+<!-- Sección de configuración, el usuario no la ve directamente -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar tildes, ñ y caracteres especiales en el texto -->
+
+  <style>
+  /* Aquí van todos los estilos visuales de la página */
+
+    body {
+      margin: 0;
+      /* Quita el espacio blanco que los navegadores agregan por defecto */
+      font-family: Arial, sans-serif;
+      /* Define la fuente de todo el texto de la página */
+      background-color: #f5f5f5;
+      /* Fondo gris muy claro para que no sea tan blanco puro */
+      padding: 30px 40px;
+      /* Espacio interior: 30px arriba y abajo, 40px a los lados */
+    }
+
+    .encabezado {
+      border-left: 5px solid #FFD700;
+      /* Línea dorada de 5px al lado izquierdo del encabezado */
+      padding-left: 16px;
+      /* Separa el texto de la línea dorada para que no queden pegados */
+      margin-bottom: 20px;
+      /* Espacio debajo del encabezado antes de la imagen */
+    }
+
+    h2 {
+      color: #1a1a1a;
+      /* Color del título principal, negro casi puro */
+      font-size: 22px;
+      /* Tamaño del título principal */
+      margin: 0 0 4px 0;
+      /* Solo 4px de espacio debajo del título */
+    }
+
+    h3 {
+      color: #1a1a1a;
+      /* Color de los títulos de sección, igual que el título principal */
+      font-size: 16px;
+      /* Tamaño más pequeño que el título principal */
+      border-left: 3px solid #FFD700;
+      /* Línea dorada más delgada al lado izquierdo */
+      padding-left: 10px;
+      /* Espacio entre la línea y el texto del subtítulo */
+      margin-top: 24px;
+      /* Espacio encima del subtítulo para separarlo del contenido anterior */
+      margin-bottom: 10px;
+      /* Espacio debajo del subtítulo antes del contenido */
+    }
+
+    .ubicacion {
+      color: #888;
+      /* Gris para que la ubicación se vea secundaria respecto al título */
+      font-size: 13px;
+      /* Letra más pequeña que el título */
+    }
+
+    img {
+      width: 100%;
+      /* La imagen ocupa todo el ancho disponible */
+      height: 350px;
+      /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+      object-fit: cover;
+      /* Recorta la imagen para que llene el espacio sin deformarse */
+      object-position: center;
+      /* El recorte se hace desde el centro de la imagen */
+      margin-bottom: 20px;
+      /* Espacio entre la imagen y el texto que viene después */
+      border-radius: 6px;
+      /* Redondea levemente las esquinas de la imagen */
+    }
+
+    p {
+      color: #444;
+      /* Gris oscuro para el texto, más suave que el negro puro */
+      font-size: 14px;
+      /* Tamaño de letra del texto descriptivo */
+      line-height: 1.8;
+      /* Espacio entre líneas para que sea más fácil de leer */
+      margin-bottom: 12px;
+      /* Espacio entre párrafos */
+    }
+
+    .datos {
+      display: grid;
+      /* Activa el modo cuadrícula para organizar las tarjetas */
+      grid-template-columns: 1fr 1fr;
+      /* Divide el espacio en dos columnas de igual tamaño */
+      gap: 10px;
+      /* Espacio entre cada tarjeta */
+      margin-top: 20px;
+      /* Espacio entre el texto y las tarjetas */
+      margin-bottom: 30px;
+      /* Espacio debajo de las tarjetas antes del siguiente contenido */
+    }
+
+    .dato {
+      background-color: white;
+      /* Fondo blanco para cada tarjeta */
+      border: 1px solid #ddd;
+      /* Borde gris claro alrededor de la tarjeta */
+      border-left: 4px solid #FFD700;
+      /* Borde izquierdo dorado más grueso como acento */
+      padding: 10px 14px;
+      /* Espacio interior de la tarjeta */
+    }
+
+    .dato .label {
+      font-size: 11px;
+      /* Letra pequeña para la etiqueta como CLIMA o FUNDADA */
+      color: #888;
+      /* Color gris para que sea secundario */
+      text-transform: uppercase;
+      /* Pone la etiqueta en mayúsculas automáticamente */
+      letter-spacing: 0.5px;
+      /* Separa un poco las letras para que se lea mejor */
+    }
+
+    .dato .valor {
+      font-size: 14px;
+      /* Tamaño del valor, un poco más grande que la etiqueta */
+      font-weight: bold;
+      /* Valor en negrilla para que resalte */
+      color: #1a1a1a;
+      /* Color casi negro para el valor */
+      margin-top: 3px;
+      /* Pequeño espacio entre la etiqueta y el valor */
+    }
+
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 36%;
+      /* Reduce la altura del video, antes era 56.25% que es el tamaño completo 16:9 */
+      max-width: 640px;
+      /* Limita el ancho máximo del video para que no ocupe toda la pantalla */
+      margin: 10px auto 30px auto;
+      /* auto en los lados lo centra horizontalmente */
+      height: 0;
+      /* Altura en 0 porque el tamaño lo controla el padding */
+      overflow: hidden;
+      /* Oculta lo que se salga del contenedor */
+      border-radius: 6px;
+      /* Redondea las esquinas del video */
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      /* Posiciona el video dentro del contenedor */
+      top: 0;
+      /* Lo pega arriba del contenedor */
+      left: 0;
+      /* Lo pega a la izquierda del contenedor */
+      width: 100%;
+      /* El video ocupa todo el ancho del contenedor */
+      height: 100%;
+      /* El video ocupa toda la altura del contenedor */
+      border: 0;
+      /* Quita el borde que los navegadores agregan al iframe por defecto */
+    }
+
+  </style>
+</head>
+
+<body>
+<!-- Aquí va todo el contenido visible de la página -->
+
+  <!-- Bloque del encabezado con el nombre del sitio y su ubicación -->
+  <div class="encabezado">
+    <h2>Cartagena de Indias</h2>
+    <!-- Nombre principal del sitio turístico -->
+    <div class="ubicacion">Bolivar, Costa Caribe Colombia</div>
+    <!-- Ubicación del sitio, se ve en gris debajo del nombre -->
+  </div>
+
+  <!-- Imagen representativa del sitio -->
+  <!-- src indica dónde está guardada la imagen dentro del proyecto -->
+  <!-- alt es el texto que aparece si la imagen no carga -->
+  <img src="imagenes/cartagena.jpg" alt="Cartagena de Indias">
+
+  <!-- Subtítulo de la sección de descripción general -->
+  <h3>Descripcion general</h3>
+
+  <!-- Párrafo con la descripción general del sitio -->
+  <p>Cartagena de Indias es una ciudad ubicada en la costa norte de Colombia, a orillas del mar Caribe. Fue fundada el 1 de junio de 1533 por el conquistador español Pedro de Heredia. Su nombre oficial es Cartagena de Indias para distinguirla de Cartagena, España.</p>
+
+  <p>En 1984 fue declarada Patrimonio de la Humanidad por la UNESCO gracias a su ciudad amurallada, su arquitectura colonial y su historia. Es considerada una de las ciudades mas hermosas e importantes de America Latina.</p>
+
+  <!-- Subtítulo de la sección histórica -->
+  <h3>Historia</h3>
+
+  <!-- Párrafos con la historia del sitio -->
+  <p>Durante la epoca colonial, Cartagena fue uno de los puertos mas importantes del Imperio Español en America. Por sus muelles pasaban las riquezas del continente, especialmente el oro y la plata, antes de ser enviadas a España. Esto la convirtió en un blanco frecuente de piratas y corsarios.</p>
+
+  <p>Para defenderse, los españoles construyeron una impresionante muralla que rodea el centro historico, además de varios castillos y fuertes. El mas famoso es el Castillo de San Felipe de Barajas, construido en 1536, que es la fortaleza militar mas grande que España construyo en America.</p>
+
+  <!-- Subtítulo de la sección de lugares para visitar -->
+  <h3>Lugares para visitar</h3>
+
+  <!-- Párrafos con los lugares turísticos dentro de Cartagena -->
+  <p>El Centro Historico amurallado es el corazon de la ciudad, con sus coloridas casas coloniales, balcones con flores y calles empedradas. El barrio Getsemani, famoso por su arte urbano y su ambiente cultural, es uno de los mas visitados por los turistas.</p>
+
+  <p>Las Islas del Rosario son un archipielago a 45 minutos en lancha desde Cartagena, con aguas cristalinas ideales para el buceo y el snorkel. La Playa Blanca en la Isla Baru es considerada una de las playas mas bonitas del Caribe colombiano.</p>
+
+  <!-- Subtítulo de la sección de gastronomía -->
+  <h3>Gastronomia</h3>
+
+  <!-- Párrafo con información de la comida típica -->
+  <p>La gastronomia cartagenera es una mezcla de influencias indigenas, africanas y españolas. Entre los platos tipicos estan el arroz con coco, el ceviche de camaron, la arepa de huevo, el sancocho de pescado y el mote de queso. En las calles es comun ver vendedoras de cocadas, bollo limpio y frutas tropicales.</p>
+
+  <!-- Subtítulo de la sección de datos importantes -->
+  <h3>Datos importantes</h3>
+
+  <!-- Cuadrícula con tarjetas de datos concretos del sitio -->
+  <div class="datos">
+
+    <!-- Tarjeta 1: clima de la ciudad -->
+    <div class="dato">
+      <div class="label">Clima</div>
+      <!-- Etiqueta que indica qué tipo de dato es -->
+      <div class="valor">30 grados promedio</div>
+      <!-- El dato en sí, se ve en negrilla -->
+    </div>
+
+    <!-- Tarjeta 2: departamento donde está ubicada -->
+    <div class="dato">
+      <div class="label">Departamento</div>
+      <div class="valor">Bolivar</div>
+    </div>
+
+    <!-- Tarjeta 3: año de fundación -->
+    <div class="dato">
+      <div class="label">Fundada</div>
+      <div class="valor">1 de junio de 1533</div>
+    </div>
+
+    <!-- Tarjeta 4: reconocimiento internacional -->
+    <div class="dato">
+      <div class="label">Reconocimiento</div>
+      <div class="valor">Patrimonio UNESCO 1984</div>
+    </div>
+
+    <!-- Tarjeta 5: población aproximada -->
+    <div class="dato">
+      <div class="label">Poblacion</div>
+      <div class="valor">Aprox. 1 millon de habitantes</div>
+    </div>
+
+    <!-- Tarjeta 6: fortaleza más importante -->
+    <div class="dato">
+      <div class="label">Fortaleza</div>
+      <div class="valor">Castillo San Felipe de Barajas</div>
+    </div>
+
+  </div>
+  <!-- Cierra la sección de tarjetas de datos -->
+
+  <!-- Subtítulo de la sección del video -->
+  <h3>Video</h3>
+
+  <!-- Contenedor del video de YouTube -->
+  <!-- El truco del padding-bottom es para que el video mantenga su proporción al cambiar de tamaño -->
+  <div class="video-contenedor">
+
+    <!-- iframe es la etiqueta que permite mostrar contenido externo dentro de la página -->
+    <!-- src es el enlace del video de YouTube en formato de inserción -->
+    <!-- allowfullscreen permite que el usuario pueda ver el video en pantalla completa -->
+    <iframe
+      src="https://www.youtube.com/embed/vEIlUxqnd4Y?si=BLJDm2lVCXsx8ogs"
+      title="Video de Cartagena de Indias"
+      allowfullscreen>
+    </iframe>
+    <!-- Cierra el iframe del video -->
+
+  </div>
+  <!-- Cierra el contenedor del video -->
+
+</body>
+<!-- Cierra el contenido visible -->
+
+</html>
+<!-- Cierra el documento HTML -->
